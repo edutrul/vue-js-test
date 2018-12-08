@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    First name: {{ first_name }} <br>
+    Last name: {{ last_name }} <br>
+    <span v-if="isAgeSeen">
+      Age: {{ age }} <br>
+    </span>
+    Zip code: {{ zip_code }} <br>
+  </div>
+  <div id="app-2">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+  </div>
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.label }}
+      </li>
+    </ol>
+  </div>
+
+  <div id="app-3">
+    <ol>
+      <li v-for="number in numbers" v-if="number % 2 === 0 && number <= 80">
+        {{ number }}
+      </li>
+    </ol>
+  </div>
+
+  <div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+
+  <ol>
+    <!-- Create an instance of the todo-item component -->
+    <todo-item>yoo</todo-item>
+  </ol>
+<script src="script.js"></script>
+</body>
+</html>
+
