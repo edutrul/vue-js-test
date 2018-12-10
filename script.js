@@ -1,9 +1,3 @@
-// Define a new component called todo-item
-Vue.component('todo-item', {
-  template: '<li>This is a todo</li>'
-});
-
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -56,7 +50,27 @@ var app5 = new Vue({
 var app6 = new Vue({
   el: '#app-6',
   data: {
-    message: 'Hello world'
+    message: 'Hello bvvc world'
   }
 });
 
+Vue.component('yo', {
+  props: ['message'],
+  template: '<p>{{ message }} </p>',
+});
+
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>[{{ todo.id }}] - {{ todo.text }}</li>'
+});
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'Vegetables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Whatever else humans are supposed to eat' }
+    ]
+  }
+})
