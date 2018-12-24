@@ -89,8 +89,39 @@ var fireApp = new Vue({
   data: {
     fires: [
       { id: 0, title: 'Emergencia medica title', address: 'av san juan', emergency_type: 'Fire' },
-      { id: 0, title: 'Emergencia a title', address: 'av san juan a', emergency_type: 'Accidente Vehicular' },
-      { id: 0, title: 'Emergencia b title', address: 'av san juan b', emergency_type: 'Desechos quimicos' },
+      { id: 1, title: 'Emergencia a title', address: 'av san juan a', emergency_type: 'Accidente Vehicular' },
+      { id: 2, title: 'Emergencia b title', address: 'av san juan b', emergency_type: 'Desechos quimicos' },
     ]
+  }
+});
+
+console.log(fireApp.$data.fires);
+
+var app8 = new Vue({
+  data: {
+    a: 1
+  },
+  created: function () {
+    this.a++;
+    // `this` points to the vm instance
+    console.log('a is: ' + this.a)
+  }
+});
+
+console.log(fireApp.$data.fires);
+
+var app9 = new Vue({
+  el: '#app-9',
+  data: {
+    first_name: ''
+  },
+  created: function () {
+    this.first_name = 'Pepe';
+  },
+
+  methods: {
+    onSubmit: function() {
+      alert('Subbmitting data' + this.first_name);
+    }
   }
 });

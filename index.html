@@ -11,9 +11,12 @@
     Last name: {{ last_name }} <br>
     <span v-if="isAgeSeen">
       Age: {{ age }} <br>
+      <b>{{ age >= 18 ? 'You are an adult.' : 'You are still a child.' }}</b>
+      <br>
     </span>
     Zip code: {{ zip_code }} <br>
-    <div class="email">{{ email }}</div>
+    <div v-once class="email"> this email will never change: {{ email }}</div>
+
   </div>
   <div id="app-2">
     <span v-bind:title="message">
@@ -72,6 +75,17 @@
       v-bind:fire="fire"
       v-bind:key="fire.id"
     ></card-fire>
+  </div>
+
+  <div id="app-9">
+    <!-- <form v-on:submit.prevent="onSubmit"> -->
+    <!-- here goes shorthand for modifiers -->
+    <form @submit.prevent="onSubmit">
+      Insert name:
+      <input v-model="first_name" type="text">
+      Your name: {{ first_name }}
+      <button type="submit">Send</button>
+    </form>
   </div>
 <script src="script.js"></script>
 </body>
