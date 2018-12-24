@@ -13,6 +13,7 @@
       Age: {{ age }} <br>
     </span>
     Zip code: {{ zip_code }} <br>
+    <div class="email">{{ email }}</div>
   </div>
   <div id="app-2">
     <span v-bind:title="message">
@@ -48,7 +49,7 @@
 
 
   <div id="app-7">
-    <yo message="Eduardo Telaya"></yo>
+    <yo message="Eduardo Telaya ejeje"></yo>
 
     <ol>
       <!--
@@ -63,6 +64,14 @@
         v-bind:key="item.id"
       ></todo-item>
     </ol>
+  </div>
+
+  <div id="fireApp">
+    <card-fire
+      v-for="fire in fires"
+      v-bind:fire="fire"
+      v-bind:key="fire.id"
+    ></card-fire>
   </div>
 <script src="script.js"></script>
 </body>

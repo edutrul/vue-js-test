@@ -5,7 +5,8 @@ var app = new Vue({
     last_name: 'Telaya Escobedo',
     age: 27,
     zip_code: 'LIMA 43',
-    isAgeSeen: true
+    isAgeSeen: true,
+    email: 'luis.eduardo.telaya@gmail.com'
   }
 });
 
@@ -64,6 +65,14 @@ Vue.component('todo-item', {
   template: '<li>[{{ todo.id }}] - {{ todo.text }}</li>'
 });
 
+Vue.component('card-fire', {
+  props: ['fire'],
+  template: '<li>{{ fire.title }}' +
+    '<br> {{ fire.address }}' +
+    '<br> {{ fire.emergency_type }}' +
+    '</li>'
+});
+
 var app7 = new Vue({
   el: '#app-7',
   data: {
@@ -73,4 +82,15 @@ var app7 = new Vue({
       { id: 2, text: 'Whatever else humans are supposed to eat' }
     ]
   }
-})
+});
+
+var fireApp = new Vue({
+  el: '#fireApp',
+  data: {
+    fires: [
+      { id: 0, title: 'Emergencia medica title', address: 'av san juan', emergency_type: 'Fire' },
+      { id: 0, title: 'Emergencia a title', address: 'av san juan a', emergency_type: 'Accidente Vehicular' },
+      { id: 0, title: 'Emergencia b title', address: 'av san juan b', emergency_type: 'Desechos quimicos' },
+    ]
+  }
+});
