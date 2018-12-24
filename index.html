@@ -87,6 +87,13 @@
       <button type="submit">Send</button>
     </form>
   </div>
+  <div id="app-10">
+    <!-- <form v-on:submit.prevent="onSubmit"> -->
+    <!-- here goes shorthand for modifiers -->
+    A: <input v-model.number="a" type="number"> value: {{ a }} <br>
+    B: <input v-model.number="b" type="number"> value: {{ b }} <br>
+    Here's result: {{ getSum }}
+  </div>
 <script src="script.js"></script>
 </body>
 </html>

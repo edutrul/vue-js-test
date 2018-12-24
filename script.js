@@ -125,3 +125,18 @@ var app9 = new Vue({
     }
   }
 });
+
+
+var app10 = new Vue({
+  el: '#app-10',
+  data: {
+    a: 0,
+    b: 0,
+  },
+
+  computed: {
+    getSum: function() {
+      return (this.a + this.b);
+    }
+  }
+});
